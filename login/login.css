@@ -1,0 +1,87 @@
+body{
+    margin:0;
+    padding:0;
+    background:#fff;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+}
+.banner {
+    height: 100vh;
+    width: 100%;
+    background:url('banner.jpg');
+    background-position: top;
+    background-size: cover;
+    background-attachment: no-repeat;
+}
+
+.banner .loginform{
+    margin-top: 15%;
+    transform: translateY(-15%);
+}
+
+.banner .loginform button:hover{
+    background: #fc8003;
+}
+
+/* Bordered form */
+form {
+    max-width: 660px;
+    padding: 15px;  
+    margin-left:25%;
+    margin-right:25%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #fc6b03;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Sign Up button */
+.signupbtn {
+    width: auto;
+    padding: 10px 18px;
+}
+
+/* Center the logo image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Logo image */
+img.logo {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* The "Forgot password" button */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw a{
+    color:white;
+}
