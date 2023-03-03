@@ -50,6 +50,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 30px;
 }
 
 /* Sign Up button */
@@ -66,7 +67,7 @@ button {
 
 /* Logo image */
 img.logo {
-    width: 40%;
+    width: 75%;
     border-radius: 50%;
 }
 
