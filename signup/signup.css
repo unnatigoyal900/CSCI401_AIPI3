@@ -85,15 +85,19 @@ span.psw {
 
 /* The "Log in" text */
 span.psw a{
-    color:white;
+    color:#fc8003;
 }
 
-/* The "Log in" text */
 span.psw a:hover{
     color:#fc8003;
 }
 
 /* "Terms of Services" and "Privacy Policy" text turns orange*/
+.terms a{
+    color: #fc8003;
+}
+
+
 .terms a:hover{
     color: #fc8003;
 }
