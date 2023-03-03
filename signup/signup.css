@@ -53,6 +53,13 @@ button {
     border-radius: 30px;
 }
 
+/* Sign Up button */
+.signupbtn {
+    width: auto;
+    float: right;
+    padding: 10px 18px;
+}
+
 /* Center the logo image inside this container */
 .imgcontainer {
     text-align: center;
@@ -70,25 +77,23 @@ img.logo {
     padding: 16px;
 }
 
-/* The "Forgot password" button */
+
+/* The "Log in" button */
 span.psw {
-    float: left;
     padding-top: 16px;
 }
 
-/* The "Forgot password" text */
-span a{
+/* The "Log in" text */
+span.psw a{
     color:white;
 }
 
-/* The "Forgot password" button */
-span.signup {
-    float: right;
-    padding-top: 16px;
+/* The "Log in" text */
+span.psw a:hover{
+    color:#fc8003;
 }
 
-/* "Forgot password" and "Sign up" text turns orange*/
-span a:hover{
+/* "Terms of Services" and "Privacy Policy" text turns orange*/
+.terms a:hover{
     color: #fc8003;
 }
-

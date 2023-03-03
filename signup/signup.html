@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="signup.css" />
   </head>
   <body>
      <div class="container-fluid banner">
@@ -28,14 +28,15 @@
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="psw" required>
                   
-            
-              <button type="submit">Login</button>
+              
+              <label class="terms">
+                <input type="checkbox" checked="checked" name="remember"> I agree to the <a href="#">Terms of Services</a> and <a href="#">Privacy Policy</a>
+              </label>
+              <button type="submit">Sign Up</button>
             </div>
           
             <div class="container">
-              <span class="psw"> <a href="#">Forgot password?</a></span>
-              <span class="signup"> <a href="#">Sign Up</a></span>
-              
+              <span class="psw"> Have an account? <a href="#">Log in</a></span>
             </div>
           </form>
         </div>
