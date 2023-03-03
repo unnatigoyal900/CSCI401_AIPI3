@@ -81,6 +81,10 @@ span a{
     color:white;
 }
 
+span.signup a{
+    color: #fc8003;
+}
+
 /* The "Forgot password" button */
 span.signup {
     float: right;
