@@ -18,7 +18,8 @@ signupButton.addEventListener("click", (e) => {
     }
     */
     else {
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("password", password);
         location = "../signup/getinfo.html"
     }
-    // add username and password to database
 })

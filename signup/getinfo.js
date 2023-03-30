@@ -10,6 +10,9 @@ getinfoButton.addEventListener("click", (e) => {
     const email = getinfoForm.email.value;
     const phoneNumber = getinfoForm.phoneNumber.value;
 
+    var username = sessionStorage.getItem("username");
+    var password = sessionStorage.getItem("password");
+
     if (firstName === "" || lastName === "" || orgName === "" || email === "" || phoneNumber === "") {
         getinfoErrorMsg.style.opacity = 1;
         getinfoErrorMsg.textContent = "Missing required fields";
