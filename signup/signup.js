@@ -18,7 +18,7 @@ signupButton.addEventListener("click", (e) => {
     }
     */
     else {
-        location = "../homepage/index.html"
+        location = "../homepage/homepage.html"
     }
     // add username and password to database
 })
