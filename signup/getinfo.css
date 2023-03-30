@@ -27,13 +27,13 @@ body{
     background: #fc8003;
 }
 
-#signup-error-msg-holder {
+#getinfo-error-msg-holder {
     display: grid;
     justify-items: center;
     align-items: center;
 }
   
-#signup-error-msg {
+#getinfo-error-msg {
     width: 90%;
     text-align: center;
     margin: 0;
@@ -55,7 +55,7 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=tel], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -77,7 +77,7 @@ button {
 }
 
 /* Sign Up button */
-.signupbtn {
+.getinfobtn {
     width: auto;
     float: right;
     padding: 10px 18px;
@@ -115,12 +115,3 @@ span.psw a:hover{
     color:#fc8003;
 }
 
-/* "Terms of Services" and "Privacy Policy" text turns orange*/
-.terms a{
-    color: #fc8003;
-}
-
-
-.terms a:hover{
-    color: #fc8003;
-}

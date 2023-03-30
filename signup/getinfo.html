@@ -10,35 +10,38 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="signup.css" />
-    <script defer src="signup.js"></script>
+    <link rel="stylesheet" type="text/css" href="getinfo.css" />
+    <script defer src="getinfo.js"></script>
   </head>
   <body>
      <div class="container-fluid banner">
       <div class="row">
         <div class="col-md-6 offset-md-3 loginform">
-          <form id="signup-form" action="/action_page.php" method="post">
+          <form id="getinfo-form" action="/action_page.php" method="post">
             <div class="imgcontainer">
               <img src="../assets/aipi3.png" alt="Logo" class="logo">
             </div>
 
-            <div id="signup-error-msg-holder">
-              <p id="signup-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+            <div id="getinfo-error-msg-holder">
+              <p id="getinfo-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
             </div>
           
             <div class="container">
-              <input type="text" placeholder="Username" name="username" required>
+              <input type="text" placeholder="First Name" name="firstName" required>
           
-              <input type="password" placeholder="Password" name="password" required>              
+              <input type="text" placeholder="Last Name" name="lastName" required> 
+
+              <input type="text" placeholder="Organization Name" name="orgName" required>
+          
+              <input type="email" placeholder="Email" name="email" required> 
+
+              <input type="tel" placeholder="Phone Number" name="phoneNumber" required>                  
               
-              <label class="terms">
-                <input type="checkbox" checked="checked" name="remember"> I agree to the <a href="#">Terms of Services</a> and <a href="#">Privacy Policy</a>
-              </label>
-              <button type="submit" id="signup-form-submit">Sign Up</button>
+              <button type="submit" id="getinfo-form-submit">Finish</button>
             </div>
           
             <div class="container">
-              <span class="psw"> Have an account? <a href="../login/login.html">Log in</a></span>
+              <span class="psw"> <a href="../signup/signup.html">Back</a></span>
             </div>
           </form>
         </div>
