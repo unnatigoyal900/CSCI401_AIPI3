@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
     // search database for key value pair
     const matchFound = Boolean(username === "user" && password === "12345"); // REPLACE
     if (matchFound) {
-        location = "../homepage/index.html"
+        location = "../homepage/homepage.html"
     } else {
         loginErrorMsg.style.opacity = 1;
         loginErrorMsg.textContent = "Invalid username and/or password";
