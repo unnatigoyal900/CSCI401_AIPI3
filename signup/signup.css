@@ -23,6 +23,25 @@ body{
     background: #fc8003;
 }
 
+#signup-error-msg-holder {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+  
+#signup-error-msg {
+    width: 90%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+}
+
 /* Bordered form */
 form {
     max-width: 660px;
