@@ -15,7 +15,7 @@ getinfoButton.addEventListener("click", (e) => {
         getinfoErrorMsg.textContent = "Missing required fields";
     } 
     else {
-        location = "../homepage/index.html"
+        location = "../homepage/homepage.html"
     }
     // add user info to database
 })
