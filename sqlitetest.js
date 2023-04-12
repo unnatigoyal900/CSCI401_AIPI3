@@ -13,7 +13,10 @@ db.exec(`
         username TEXT primary key not null,
         password TEXT not null,
         first_name TEXT not null,
-        organization TEXT not null
+        last_name TEXT not null,
+        organization TEXT not null,
+        phone_number TEXT not null,
+        email TEXT not null
     );
 `, ()  => {
     console.log('Create table');
@@ -22,10 +25,10 @@ db.exec(`
 
 // insert new users into the database
 db.exec(`
-    INSERT INTO users (username, password, first_name, organization)
-        values ('phubbles', '12345', 'Phoebe', 'Bunnies'),
-            ('livvy_812', '67890', 'Olivia', 'Strawberries'),
-            ('lord_sator', '13579', 'Luke', 'Balloons');
+    INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email)
+        values ('phubbles', '12345', 'Phoebe', 'Clayfer', 'Bunnies', '1234567890', 'phubbles@gmail.com'),
+            ('livvy_812', '67890', 'Olivia', 'Driscoll', 'Strawberries', '0987654321', 'livvy@gmail.com'),
+            ('lord_sator', '13579', 'Luke', 'Sator', 'Balloons', '1352467980', 'sator@gmail.com');
 `, ()  => {
     console.log('Insert users');
 });
