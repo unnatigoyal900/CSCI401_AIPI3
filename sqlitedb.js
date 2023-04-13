@@ -17,6 +17,16 @@ class Database {
     });
   }
 
+  async add_user(username, password, first_name, last_name, organization, phone_number, email) {
+    const sql = `INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    this.db.run(sql, [username, password, first_name, last_name, organization, phone_number, email], function(err) {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(`Added a user`);
+        });
+  }
+
   async check_user_exists(username) {
     let target = username;
     this.db.get(`
