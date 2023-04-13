@@ -1,6 +1,7 @@
 const homeButton = document.getElementById("home-button");
 const dashButton = document.getElementById("dash-button");
 const profileButton = document.getElementById("profile-button");
+const logoutButton = document.getElementById("logout-button");
 
 homeButton.addEventListener("click", (e) => {
     e.preventDefault();

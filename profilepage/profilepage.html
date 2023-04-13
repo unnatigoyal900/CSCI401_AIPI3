@@ -128,6 +128,9 @@ font-family: 'Raleway', sans-serif;
             <li class="nav-item">
               <a id= "profile-button" class="nav-link" href="#">Profile</a>
             </li>
+            <li class="nav-item">
+              <a id= "logout-button" class="nav-link" href="#">Logout</a>
+            </li>
         </ul>
         </nav>
     </div>
@@ -166,10 +169,21 @@ font-family: 'Raleway', sans-serif;
 
         <div class="col-md-6">
             <label class="small mb-1" for="inputFirstName">First name</label>
-            <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="First">
+            <input class="form-control" id="inputFirstName" type="text">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                var first = 'tommy';
+                $(document).ready(function() {
+                    $("#inputFirstName").val(first);
+                });
+            </script>
         </div>
+        
 
         <div class="col-md-6">
+            <script type="text/javascript" src="sqlitedb.js">
+                // ????
+            </script>
             <label class="small mb-1" for="inputLastName">Last name</label>
             <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Last">
         </div>
@@ -178,17 +192,26 @@ font-family: 'Raleway', sans-serif;
     <div class="row gx-3 mb-3">
 
         <div class="col-md-6">
+            <script type="text/javascript" src="sqlitedb.js">
+                // ????
+            </script>
             <label class="small mb-1" for="inputOrgName">Organization name</label>
             <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="AIPI3">
         </div>
 
         <div class="col-md-6">
+            <script type="text/javascript" src="sqlitedb.js">
+                // ????
+            </script>
             <label class="small mb-1" for="inputLocation">Phone number</label>
             <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="555-123-4567">
         </div>
     </div>
 
     <div class="mb-3">
+        <script type="text/javascript" src="sqlitedb.js">
+            // ????
+        </script>
         <label class="small mb-1" for="inputEmailAddress">Email address</label>
         <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
     </div>
