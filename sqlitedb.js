@@ -17,6 +17,28 @@ class Database {
     });
   }
 
+  async add_user(username, password, first_name, last_name, organization, phone_number, email) {
+    const sql = `INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    this.db.run(sql, [username, password, first_name, last_name, organization, phone_number, email], function(err) {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(`User with ID ${username} was successfully added`);
+    });
+  }
+
+  async remove_user(username) {
+    // Construct the SQL query
+    const sql = `DELETE FROM users WHERE username = ?`;
+    // Execute the query with the specified parameter
+    this.db.run(sql, [username], function(err) {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(`User with ID ${username} was successfully removed`);
+    });
+  }
+
   async check_user_exists(username) {
     let target = username;
     this.db.get(`
