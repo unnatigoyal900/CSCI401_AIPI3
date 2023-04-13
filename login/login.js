@@ -8,8 +8,9 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     // search database for key value pair
-    const matchFound = Boolean(username === "user" && password === "12345"); // REPLACE
+    const matchFound = Boolean(username === "Tommy" && password === "12345"); // REPLACE
     if (matchFound) {
+        sessionStorage.setItem("username", username);
         location = "../homepage/homepage.html"
     } else {
         loginErrorMsg.style.opacity = 1;
