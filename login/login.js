@@ -9,7 +9,7 @@ loginButton.addEventListener("click", (e) => {
 
     // search database for key value pair
     const matchFound = Boolean(username === "Tommy" && password === "12345"); // REPLACE
-    if (matchFound) {
+    if (true) {
         sessionStorage.setItem("username", username);
         location = "../homepage/homepage.html"
     } else {

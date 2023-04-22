@@ -2,6 +2,8 @@ const homeButton = document.getElementById("home-button");
 const dashButton = document.getElementById("dash-button");
 const profileButton = document.getElementById("profile-button");
 const logoutButton = document.getElementById("logout-button");
+const saveButton = document.getElementById("save_changes");
+
 
 homeButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -18,6 +20,10 @@ dashButton.addEventListener("click", (e) => {
     location = "../results/result.html"
 })
 logoutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    location = "../pre_homepage/pre_homepage.html"
+})
+saveButton.addEventListener("click", (e) => {
     e.preventDefault();
     location = "../pre_homepage/pre_homepage.html"
 })

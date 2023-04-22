@@ -163,6 +163,13 @@ font-family: 'Raleway', sans-serif;
     <div class="mb-3">
         <label class="small mb-1" for="inputUsername">Username </label>
         <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="Username">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            const username = sessionStorage.getItem("username");
+            $(document).ready(function() {
+                $("#inputUsername").val(username);
+            });
+        </script>
     </div>
 
     <div class="row gx-3 mb-3">
@@ -172,52 +179,128 @@ font-family: 'Raleway', sans-serif;
             <input class="form-control" id="inputFirstName" type="text">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script>
-                var first = 'tommy';
-                $(document).ready(function() {
-                    $("#inputFirstName").val(first);
+                var username1 = sessionStorage.getItem("username");
+                var columnName1 = "first_name";
+                var params1 = [username1, columnName1].join('/');
+                fetch('http://localhost:3000/get_user_info/' + params1, {
+                    method: 'GET',
+                    mode: 'cors',
+                })
+                .then(response => response.text())
+                .then(result => {
+                    $(document).ready(function() {
+                        $("#inputFirstName").val(result);
+                    });
+                })
+                .catch(error => {
+                console.error(error);
                 });
             </script>
         </div>
         
 
         <div class="col-md-6">
-            <script type="text/javascript" src="sqlitedb.js">
-                // ????
-            </script>
             <label class="small mb-1" for="inputLastName">Last name</label>
             <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Last">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                 username1 = sessionStorage.getItem("username");
+                 columnName1 = "last_name";
+                 params1 = [username1, columnName1].join('/');
+                fetch('http://localhost:3000/get_user_info/' + params1, {
+                    method: 'GET',
+                    mode: 'cors',
+                })
+                .then(response => response.text())
+                .then(result => {
+                    $(document).ready(function() {
+                        $("#inputLastName").val(result);
+                    });
+                })
+                .catch(error => {
+                console.error(error);
+                });
+            </script>
         </div>
     </div>
 
     <div class="row gx-3 mb-3">
 
         <div class="col-md-6">
-            <script type="text/javascript" src="sqlitedb.js">
-                // ????
-            </script>
             <label class="small mb-1" for="inputOrgName">Organization name</label>
             <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="AIPI3">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                 username1 = sessionStorage.getItem("username");
+                 columnName1 = "organization";
+                 params1 = [username1, columnName1].join('/');
+                fetch('http://localhost:3000/get_user_info/' + params1, {
+                    method: 'GET',
+                    mode: 'cors',
+                })
+                .then(response => response.text())
+                .then(result => {
+                    $(document).ready(function() {
+                        $("#inputOrgName").val(result);
+                    });
+                })
+                .catch(error => {
+                console.error(error);
+                });
+            </script>
         </div>
 
         <div class="col-md-6">
-            <script type="text/javascript" src="sqlitedb.js">
-                // ????
+            <label class="small mb-1" for="phonenum">Phone number</label>
+            <input class="form-control" id="phonenum" type="text" placeholder="Enter your phone number" value="555-123-4567">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                 username1 = sessionStorage.getItem("username");
+                 columnName1 = "phone_number";
+                 params1 = [username1, columnName1].join('/');
+                fetch('http://localhost:3000/get_user_info/' + params1, {
+                    method: 'GET',
+                    mode: 'cors',
+                })
+                .then(response => response.text())
+                .then(result => {
+                    $(document).ready(function() {
+                        $("#phonenum").val(result);
+                    });
+                })
+                .catch(error => {
+                console.error(error);
+                });
             </script>
-            <label class="small mb-1" for="inputLocation">Phone number</label>
-            <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="555-123-4567">
         </div>
     </div>
 
     <div class="mb-3">
-        <script type="text/javascript" src="sqlitedb.js">
-            // ????
-        </script>
         <label class="small mb-1" for="inputEmailAddress">Email address</label>
         <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+                username1 = sessionStorage.getItem("username");
+                columnName1 = "email";
+                params1 = [username1, columnName1].join('/');
+            fetch('http://localhost:3000/get_user_info/' + params1, {
+                method: 'GET',
+                mode: 'cors',
+            })
+            .then(response => response.text())
+            .then(result => {
+                $(document).ready(function() {
+                    $("#inputEmailAddress").val(result);
+                });
+            })
+            .catch(error => {
+            console.error(error);
+            });
+        </script>
     </div>
 
 
-    <button class="btn btn-primary" type="button">Save changes</button>
+    <button class="btn btn-primary" id="save_changes" type="button">Save changes</button>
 
 </form>
 </div>
