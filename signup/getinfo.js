@@ -15,6 +15,7 @@ getinfoButton.addEventListener("click", (e) => {
 
     if (firstName === "" || lastName === "" || orgName === "" || email === "" || phoneNumber === "") {
         getinfoErrorMsg.style.opacity = 1;
+        getinfoErrorMsg.textContent = "Missing required fields";
         /*
         const username = "table_mabel";
         const columnName = "organization";

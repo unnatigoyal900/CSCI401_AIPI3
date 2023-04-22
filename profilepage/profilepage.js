@@ -33,7 +33,6 @@ saveButton.addEventListener("click", (e) => {
     var orgName =document.getElementById("inputOrgName").value;
     var phoneNumber = document.getElementById("phonenum").value;
     var email = document.getElementById("inputEmailAddress").value;
-    alert(firstName);
     
     const joined = [username1, firstName, lastName, orgName, phoneNumber, email].join('/');
     fetch('http://localhost:3000/modify_user/' + joined, {
