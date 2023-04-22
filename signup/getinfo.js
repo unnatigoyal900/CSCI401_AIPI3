@@ -10,10 +10,14 @@ getinfoButton.addEventListener("click", (e) => {
     var email = getinfoForm.email.value;
     var phoneNumber = getinfoForm.phoneNumber.value;
 
-    var username = sessionStorage.getItem("username");
+    // (1) get username and password from previous page
+    // (2) require all fields to be filled
+    // (3) add the user
+
+    var username = sessionStorage.getItem("username"); // (1)
     var password = sessionStorage.getItem("password");
 
-    if (firstName === "" || lastName === "" || orgName === "" || email === "" || phoneNumber === "") {
+    if (firstName === "" || lastName === "" || orgName === "" || email === "" || phoneNumber === "") { // (2)
         getinfoErrorMsg.style.opacity = 1;
         getinfoErrorMsg.textContent = "Missing required fields";
         /*
@@ -32,22 +36,10 @@ getinfoButton.addEventListener("click", (e) => {
         console.error(error);
         });
         */
-        
-        // code for adding user 
-        /*
-        username = "hannah_banana";
-        password = "09090";
-        firstName = "Hannah";
-        lastName = "Peel";
-        orgName= "Bananas";
-        phoneNumber = "5101010105";
-        email = "hannah_banana@gmail.com";
-        */
     } 
     else {
-        // add user info to database
         const joined = [username, password, firstName, lastName, orgName, phoneNumber, email].join('/');
-        fetch('http://localhost:3000/add_user/' + joined, {
+        fetch('http://localhost:3000/add_user/' + joined, { // (3)
             method: 'PUT',
             mode: 'cors',
         })

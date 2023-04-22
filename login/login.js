@@ -7,13 +7,33 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    // search database for key value pair
-    const matchFound = Boolean(username === "Tommy" && password === "12345"); // REPLACE
-    if (true) {
-        sessionStorage.setItem("username", username);
-        location = "../homepage/homepage.html"
-    } else {
+    // (1) require both fields to be filled
+    // (2) check if username matches password
+    // (3) if no, reject login
+    // (4) if yes, continue to home page
+
+    if (username === "" || password === "") { // (1)
         loginErrorMsg.style.opacity = 1;
-        loginErrorMsg.textContent = "Invalid username and/or password";
+        loginErrorMsg.textContent = "Missing username and/or password";
+        return;
     }
+
+    const params = [username, password].join('/');
+    fetch('http://localhost:3000/validate_password/' + params, { // (2)
+        method: 'GET',
+        mode: 'cors',
+    })
+    .then(response => response.text())
+    .then(result => {
+        if (result === "Invalid") { // (3)
+            loginErrorMsg.style.opacity = 1;
+            loginErrorMsg.textContent = "Invalid username and/or password";
+        } else { // (4)
+            sessionStorage.setItem("username", username);
+            location = "../homepage/homepage.html";
+        }  
+    })
+    .catch(error => {
+    console.error(error);
+    });
 })

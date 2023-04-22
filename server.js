@@ -40,6 +40,45 @@ const server = http.createServer((req, res) => {
                 res.end(row[columnName]);
             }
         });
+    } else if (arr[1] === "check_user_exists") {
+        const username = arr[2];
+        const sql = `SELECT EXISTS(SELECT 1 FROM users WHERE username = ?) AS result`;
+        db.get(sql, [username], (err, row)  => {
+            if (err) {
+                console.error(err.message);
+                res.statusCode = 500;
+                res.end("Internal Server Error");
+            } else {
+                // send the data to the client-side JavaScript file as a string
+                res.setHeader("Content-Type", "text/plain");
+                res.statusCode = 200;
+                if (row.result === 1) {
+                    res.end("Found");
+                } else {
+                    res.end("Not Found");
+                } 
+            }
+        });
+    } else if (arr[1] === "validate_password") {
+        const username = arr[2];
+        const password = arr[3];
+        const sql = `SELECT EXISTS(SELECT 1 FROM users WHERE username = ? AND password = ?) AS result`;
+        db.get(sql, [username, password],(err, row) => {
+            if (err) {
+                console.error(err.message);
+                res.statusCode = 500;
+                res.end("Internal Server Error");
+            } else {
+                // send the data to the client-side JavaScript file as a string
+                res.setHeader("Content-Type", "text/plain");
+                res.statusCode = 200;
+                if (row.result === 1) {
+                    res.end("Valid");
+                } else {
+                    res.end("Invalid");
+                } 
+            }
+        });
     } else if (arr[1] === "add_user") {
         const sql = `INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)`;
         db.run(sql, [arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]], function(err) {
