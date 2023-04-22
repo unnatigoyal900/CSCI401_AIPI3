@@ -47,6 +47,13 @@ const server = http.createServer((req, res) => {
                 console.error(err.message);
             }
         });
+    } else if (arr[1] === "modify_user") {
+        const sql = `UPDATE users SET first_name = ?, last_name = ?, organization = ?, phone_number = ?, email = ? WHERE username = ?`;
+        db.run(sql, [arr[3], arr[4], arr[5], arr[6], arr[7], arr[2]], function(err) {
+            if (err) {
+                console.error(err.message);
+            }
+        });
     } else {
         res.statusCode = 404;
         res.end("Not Found");

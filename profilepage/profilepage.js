@@ -25,5 +25,24 @@ logoutButton.addEventListener("click", (e) => {
 })
 saveButton.addEventListener("click", (e) => {
     e.preventDefault();
-    location = "../pre_homepage/pre_homepage.html"
-})
+    const modifyForm = document.getElementById("modify-form");
+
+    var username1 = sessionStorage.getItem("username");
+    var firstName = document.getElementById("inputFirstName").value;
+    var lastName = document.getElementById("inputLastName").value;
+    var orgName =document.getElementById("inputOrgName").value;
+    var phoneNumber = document.getElementById("phonenum").value;
+    var email = document.getElementById("inputEmailAddress").value;
+    alert(firstName);
+    
+    const joined = [username1, firstName, lastName, orgName, phoneNumber, email].join('/');
+    fetch('http://localhost:3000/modify_user/' + joined, {
+        method: 'PUT',
+        mode: 'cors',
+    })
+    .catch(error => {
+    console.error(error);
+    });
+    location = "../profilepage/profilepage.html"
+ })
+ 
