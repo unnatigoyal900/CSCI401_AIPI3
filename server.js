@@ -12,6 +12,19 @@ const db = new sqlite3.Database("test.db", (err) => {
   }
 });
 
+db.exec(`
+    CREATE TABLE IF NOT EXISTS users (
+        username TEXT primary key not null,
+        password TEXT not null,
+        first_name TEXT not null,
+        last_name TEXT not null,
+        organization TEXT not null,
+        phone_number TEXT not null,
+        email TEXT not null
+    );
+`, ()  => {
+});
+
 // create server
 const server = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers", "Access-Control-Allow-Origin");
