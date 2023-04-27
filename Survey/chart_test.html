@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Info</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<!-- <script src="customer.js"></script> -->
+</head>
+<body>
+	<div class="header-class">
+        <img src="aipi3.png" alt="logo" />
+        <h1 style="color:white">Survey Results</h1>
+    </div>
+	<div class="survey-container">
+
+		<div>
+			<canvas id="myChart"></canvas>
+		</div>
+		<a href="#"><button>Return Home</button></a>
+	</div>
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    let customer_result = localStorage.getItem('customerSurveyData'); 
+    let opculture_result = localStorage.getItem('opcultureSurveyData'); 
+    let strategy_result = localStorage.getItem('strategySurveyData'); 
+    let technology_result = localStorage.getItem('technologySurveyData'); 
+    let operations_result = localStorage.getItem('operationsSurveyData'); 
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Customer', 'Operations and Culture', 'Strategy', 'Technology', 'Operations'],
+        datasets: [{
+          label: 'Percentage',
+          data: [customer_result, opculture_result, strategy_result, technology_result, operations_result],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+</script>
+</html>
+
+

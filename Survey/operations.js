@@ -20,6 +20,6 @@ function operationsSaveSurvey() {
     // Key value pairs, "surveyData - key", value 
     localStorage.setItem("operationsSurveyData", score);
 
-    window.location.href="operations.html";
+    window.location.href="chart_test.html";
   }
   
