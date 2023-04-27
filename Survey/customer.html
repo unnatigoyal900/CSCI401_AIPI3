@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="customer.js"></script>
+</head>
+<body>
+	<div class="header-class">
+        <img src="aipi3.png" alt="logo" />
+        <h1 style="color:white">Data and Technology Assessment: Customer</h1>
+    </div>
+	<div class="survey-container">
+
+		<p>Please answer the following questions: On a scale of 1-5, rank the following responses from strongly disagree (1) to strongly agree (5).</p>
+		<form>
+			<label for="question1">Question 1: Your business offers a tailored and smooth multi-channel experience that utilizes customer and situational information throughout all touch points.</label>
+			<select id="question1">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question2">Question 2: Your business holds a comprehensive perspective of the customer and possesses a thorough knowledge of their behaviors and preferences.</label>
+			<select id="question2">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question3">Question 3: Your business incorporates advanced business workflows that create engaging experiences for both consumers and employees.</label>
+			<select id="question3">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question4">Question 4: Your business equips customers with the tools to resolve common issues independently, rather than waiting for an agent to become available.</label>
+			<select id="question4">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question5">Question 5: Your business offers a speedy first contact resolution rate to resolve customer concerns with just one interaction, rather than multiple sessions that can lower satisfaction.</label>
+			<select id="question5">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<!-- <a href="Operations_Culture.html" onclick="saveSurvey()"><input type=button value='Next'></a> -->
+
+			<!-- <a href="Operations_Culture.html"><button>Next</button></a> -->
+			<!-- <button type="submit">Next</button> -->
+		</form>
+		<button onclick="customerSaveSurvey()">Next</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="operations.js"></script>
+</head>
+<body>
+	<div class="header-class">
+        <img src="aipi3.png" alt="logo" />
+        <h1 style="color:white">Data and Technology Assessment: Operations</h1>
+    </div>
+	<div class="survey-container">
+
+		<p>Please answer the following questions: On a scale of 1-5, rank the following responses from strongly disagree (1) to strongly agree (5).</p>
+		<form>
+			<label for="question1">Question 1: Your organization's digital infrastructure is reliable and scalable.</label>
+			<select id="question1">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question2">Question 2: The digital tools used in your operations support mobile and remote access.</label>
+			<select id="question2">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question3">Question 3: The digital tools used in your operations support real-time data processing and analysis.</label>
+			<select id="question3">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question4">Question 4: The digital tools used in your operations integrate with other systems and technologies used by the organization.</label>
+			<select id="question4">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+
+			<label for="question5">Question 5: The digital tools used in your operations support automation and streamlining of processes.</label>
+			<select id="question5">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</form>
+
+		<button onclick="operationsSaveSurvey()">Submit</button>
+	</div>
+</body>
+</html>
