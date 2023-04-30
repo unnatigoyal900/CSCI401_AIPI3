@@ -15,7 +15,29 @@ class Database {
         );
     `, ()  => {
     });
+
+    this.db.exec(`
+        CREATE TABLE IF NOT EXISTS survey_results (
+            username TEXT not null,
+            customer TEXT not null,
+            ops_cult TEXT not null,
+            strategy TEXT not null,
+            technology TEXT not null,
+            operations TEXT not null
+        );
+    `, ()  => {
+        console.log("Created survey results table"); 
+    });
   }
+
+  async save_survey(username, customer, ops_cult, strategy, technology, operations) {
+    const sql = `INSERT INTO survey_results (username, customer, ops_cult, strategy, technology, operations) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    this.db.run(sql, [username, customer, ops_cult, strategy, technology, operations], function(err) {
+        if (err) {
+            return console.error(err.message);
+        }
+    });
+  } 
 
   async add_user(username, password, first_name, last_name, organization, phone_number, email) {
     const sql = `INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)`;

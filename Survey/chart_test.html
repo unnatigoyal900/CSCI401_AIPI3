@@ -4,7 +4,7 @@
 	<title>Survey Info</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<!-- <script src="customer.js"></script> -->
+	<!-- <script src="sqlitedb.js"></script> -->
 </head>
 <body>
 	<div class="header-class">
@@ -47,6 +47,22 @@
         }
       }
     });
+    // Browser cannot communicate with the database directly, so we do this
+    const username = sessionStorage.getItem("username");
+    fetch('http://localhost:3000/save_survey/', {
+                    method: 'POST',
+                    mode: 'cors',
+                    body: JSON.stringify({username, customer_result, opculture_result, strategy_result, technology_result, operations_result}),
+                })
+                .then(response => response.text())
+                .then(result => {
+                    console.log("HTTP request that client made, responded to by the API", result);
+                })
+                .catch(error => {
+                console.error(error);
+                });
+     
+
 </script>
 </html>
 

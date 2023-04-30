@@ -106,7 +106,30 @@ const server = http.createServer((req, res) => {
                 console.error(err.message);
             }
         });
-    } else {
+    } 
+    else if (arr[1] === "save_survey") {
+        console.log("Saving survey");
+        console.log(req.body); 
+        var body = "";
+        req.on('readable', function() {
+            body += req.read();
+        });
+        req.on('end', function() {
+            const updatedString = body.replace("null", "");
+            const jsonObj = JSON.parse(updatedString);
+
+            const sql = `INSERT INTO survey_results (username, customer, ops_cult, strategy, technology, operations) VALUES (?, ?, ?, ?, ?, ?)`;
+            db.run(sql, jsonObj['username'], jsonObj['customer_result'], jsonObj['opculture_result'], jsonObj['strategy_result'], jsonObj['technology_result'],jsonObj['operations_result'], function(err) {
+                if (err) {
+                    console.error(err.message);
+                }
+            });
+            res.write("OK"); 
+            res.end("Valid");  
+        });
+        
+    }
+    else {
         res.statusCode = 404;
         res.end("Not Found");
     }

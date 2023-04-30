@@ -1,0 +1,23 @@
+{
+  "name": "csci401_aipi3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unnatigoyal900/CSCI401_AIPI3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unnatigoyal900/CSCI401_AIPI3/issues"
+  },
+  "homepage": "https://github.com/unnatigoyal900/CSCI401_AIPI3#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}
