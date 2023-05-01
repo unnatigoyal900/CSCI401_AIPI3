@@ -38,14 +38,17 @@ getinfoButton.addEventListener("click", (e) => {
         */
     } 
     else {
-        const joined = [username, password, firstName, lastName, orgName, phoneNumber, email].join('/');
-        fetch('http://localhost:3000/add_user/' + joined, { // (3)
-            method: 'PUT',
+        //const joined = [username, password, firstName, lastName, orgName, phoneNumber, email].join('/');
+        fetch('http://localhost:3000/add_user/'/* + joined*/, { // (3)
+            method: 'POST',
             mode: 'cors',
+            body: JSON.stringify({username, password, firstName, lastName, orgName, phoneNumber, email}),
+        })
+        .then(result => {
+            location = "../homepage/homepage.html";
         })
         .catch(error => {
         console.error(error);
         });
-        location = "../homepage/homepage.html"
     }
 })

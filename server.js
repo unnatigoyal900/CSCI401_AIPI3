@@ -33,7 +33,6 @@ const server = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     const arr = req.url.split("/");
     if (arr[1] === "get_user_info") {
-        // query the database
         const username = arr[2];
         const columnName = arr[3];
         const sql = `SELECT ${columnName} FROM users WHERE username = ?`;
@@ -93,11 +92,22 @@ const server = http.createServer((req, res) => {
             }
         });
     } else if (arr[1] === "add_user") {
-        const sql = `INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-        db.run(sql, [arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]], function(err) {
-            if (err) {
-                console.error(err.message);
-            }
+        var body = "";
+        req.on('readable', function() {
+            body += req.read();
+        });
+        req.on('end', function() {
+            const updatedString = body.replace("null", "");
+            const jsonObj = JSON.parse(updatedString);
+
+            const sql = `INSERT INTO users (username, password, first_name, last_name, organization, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+            db.run(sql, jsonObj['username'], jsonObj['password'], jsonObj['firstName'], jsonObj['lastName'], jsonObj['orgName'],jsonObj['phoneNumber'],jsonObj['email'], function(err) {
+                if (err) {
+                    console.error(err.message);
+                }
+            });
+            res.write("OK"); 
+            res.end("Valid");  
         });
     } else if (arr[1] === "modify_user") {
         const sql = `UPDATE users SET first_name = ?, last_name = ?, organization = ?, phone_number = ?, email = ? WHERE username = ?`;

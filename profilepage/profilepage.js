@@ -39,9 +39,11 @@ saveButton.addEventListener("click", (e) => {
         method: 'PUT',
         mode: 'cors',
     })
+    .then(result => {
+        location = "../profilepage/profilepage.html";
+    })
     .catch(error => {
     console.error(error);
     });
-    location = "../profilepage/profilepage.html"
  })
  
