@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/unnatigoyal900/CSCI401_AIPI3#readme",
   "dependencies": {
+    "sqlite": "^4.2.0",
     "sqlite3": "^5.1.6"
   }
 }

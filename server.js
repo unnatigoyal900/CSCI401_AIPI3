@@ -139,6 +139,28 @@ const server = http.createServer((req, res) => {
         });
         
     }
+    else if (arr[1] === "get_survey") {
+        const username = arr[2];
+        const sql = `SELECT * FROM survey_results WHERE username = ?`;
+        db.all(sql, [username], (err, row) => {
+            console.log(JSON.stringify(row));
+            console.log(username);
+            if (err) {
+                console.error(err.message);
+                res.statusCode = 500;
+                res.end("Internal Server Error");
+            } else if (row.length == 0) {
+                // username not found in the survey_results table
+                res.statusCode = 404;
+                res.end("Survey results not found for user");
+            } else {
+                // send the data to the client-side JavaScript file as a JSON string
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 200;
+                res.end(JSON.stringify(row));
+            }
+        });
+    }  
     else {
         res.statusCode = 404;
         res.end("Not Found");
