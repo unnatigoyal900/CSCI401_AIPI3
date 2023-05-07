@@ -12,8 +12,11 @@ profileButton.addEventListener("click", (e) => {
     e.preventDefault();
     location = "../profilepage/profilepage.html"
 })
-
 dashButton.addEventListener("click", (e) => {
     e.preventDefault();
     location = "../results/result.html"
+})
+logoutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    location = "../pre_homepage/pre_homepage.html"
 })
